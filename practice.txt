@@ -1,0 +1,392 @@
+JavaScript 
+
+` `
+
+
+//This is a comment
+/* 
+ This is a long
+ Comment
+ */
+
+
+//console.log('Hello');
+//console.log('I like pizza')
+
+//window.alert('This is an alert');
+//window.alert('I like pizza');
+
+//document.getElementById("myH1").textContent = 'Hello';
+//document.getElementById("myP").textContent = 'I like pizza';
+
+
+ //variable= container that stores a value 
+ //1. declaration let x;
+ //2. assignment x = 100;
+
+ //let age = 25;
+ //let price = 2.1;
+ //let gpa = 2.1;
+
+
+//let firstName = "Bro"
+//console.log(typeof firstName)
+
+/*
+let fullName = "Vinay Raj";
+let age = 25;
+let isStudent = false;
+
+document.getElementById("p1").textContent = `Your name is ${fullName}`;
+document.getElementById("p2").textContent = `You are ${age} years old`;
+document.getElementById("p3").textContent = `Enrolled: ${isStudent}`;
+*/
+
+/* airthmetic operators = operands(values, varibales, etc)
+                       operators(+ - * /) 
+                       ex 11 = x + 5
+*/
+
+//let students = 35;
+
+//students = students + 1;
+//students = students - 1;
+//students = students * 1;
+//students = students / 2;
+//students = students ** 2;
+//let extraStudents = students % 3;
+
+//students += 1;
+//students -= 1;
+//students *= 2;
+//students /= 2;
+//students **= 2;
+//students %= 2;
+
+//students ++
+//students --;
+
+/* 
+operator precedence 
+1. parenthesis()
+2. exponents
+3. multiplication & division & modulo
+4. addition & subtraction
+*/
+
+// User input 
+// 1. easy way = window prompt 
+// 2. professional way = html textbox
+
+// let username;
+// username  = window.prompt("What is your username") OR
+// let username = window.prompt("What is your username")
+// console.log(username)
+
+
+/*
+let username;
+document.getElementById("mySubmit").onclick = function() {
+username = document.getElementById("myText").value;
+document.getElementById("myH1").textContent = `Welcome ${username} `
+*/
+
+/* 
+let age = window.prompt("How old are you")
+age = Number(age)
+age = age + 1
+console.log(age, typeof age) 
+*/
+
+/* type conversion
+let x 
+let y = "0"
+let z = ""
+
+x = Number(x)
+y = String(y)
+z = Boolean(z)
+
+console.log(x, typeof x)
+console.log(y, typeof y)
+console.log(z, typeof z)
+*/
+
+//const = a variable that cant be changed, once you assign a constant you cant change the value
+
+/* const PI = 3.14159;
+let radius;
+let circumference;
+
+
+document.getElementById("mySubmit").onclick = function() {
+    radius = document.getElementById("myText").value
+    radius = Number(radius)
+    circumference = 2* PI * radius;
+    document.getElementById("myH3").textContent = circumference + "cm"
+}
+*/
+
+
+
+
+
+// COUNTER PROGRAM
+
+const decreaseBtn = document.getElementById("decreaseBtn");
+const resetBtn = document.getElementById("resetBtn");
+const increaseBtn = document.getElementById("increaseBtn");
+const countLabel = document.getElementById("countLabel");
+let count = 0;
+
+increaseBtn.onclick = function(){
+    count++;
+    countLabel.textContent = count ;
+}
+
+decreaseBtn.onclick = function(){
+    count --;
+    countLabel.textContent = count ;
+}
+
+resetBtn.onclick = function(){
+    count = 0;
+    countLabel.textContent = count
+}
+
+
+
+
+
+// Math = built-in object that provides a collection of properties and methods
+
+let x = 3.99;
+let y = 2;
+let z ;
+
+// z = Math.round(x);
+// z = Math.floor(x);  //round down
+// z = Math.ceil(x);  //round up
+// z = Math.trunc(x);  //remove decimal
+// z = Math.pow(x,y); //9
+// z = Math.sqrt(x);  //1.789
+// z = Math.log(x);
+// z = Math.sin(x);
+// z = Math.cos(x);
+// z = Math.tan(x);
+// z = Math.sign(x);  //display 1 if positive, -1 if negative
+let max = Math.max(x, y, z);
+let min = Math.min(x, y, z);
+console.log(min);
+// console.log(z);
+
+
+
+
+// random number from 50 to 100
+const min = 50
+const max = 100
+let randomNum = Math.floor(Math.random() * min + min);
+
+console.log(randomNum);
+
+
+
+
+// Random Number Generator 
+
+const myButton = document.getElementById("myButton");
+const label1 = document.getElementById("label1");
+const label2 = document.getElementById("label2");
+const label3 = document.getElementById("label3");
+const min = 1;
+const max = 6;
+let randomNum1;
+let randomNum2;
+let randomNum3;
+
+myButton.onclick = function(){
+      randomNum1 = Math.floor(Math.random()* max) + min;
+      randomNum2 = Math.floor(Math.random()* max) + min;
+      randomNum3 = Math.floor(Math.random()* max) + min;
+      label1.textContent = randomNum1;
+      label2.textContent = randomNum2;
+      label3.textContent = randomNum3;
+}
+
+
+
+
+
+//IF Statements
+
+/*
+let isStudent = true;
+
+if(isStudent){
+    console.log("You are a student");
+}
+else{
+    console.log("You are not a student")
+}
+    */
+
+/*
+let age = 25;
+let hasLicense = true;
+
+if(age>=16){
+    console.log("You are old enough to drive")
+   if(hasLicense){
+    console.log("You have your license")
+   }
+   else{
+    console.log("You do not have your license 'yet")
+   }
+}
+else{
+  console.log("you must be older than 16")
+}
+*/
+
+
+
+/*
+const myText = document.getElementById("myText");
+const mySubmit = document.getElementById("mySubmit");
+const resultElement = document.getElementById("resultElement");
+let age;
+
+mySubmit.onclick = function(){
+    age = myText.value;
+    age = Number(age);
+
+    if(age >=100){
+        resultElement.textContent = `You are too OLD to enter this site`;
+    }
+    else if(age>=18){
+        resultElement.textContent = `You are old enough to enter this site`;
+    }
+    else if(age ==0){
+        resultElement.textContent = `Enter correct age`;
+    }
+    else if(age<0){
+        resultElement.textContent = `Your age cant be below 0`;
+    }
+    
+    else{
+        resultElement.textContent = `You are not old enough to enter this site`;
+    }
+}
+*/
+
+
+
+
+
+
+//SWITCH = can be efficient replacement to many if statements
+
+/* 
+let day = 1;
+
+switch(day){
+    case 1:
+       console.log("It is Monday")
+       break;
+    case 2:
+        console.log("It is Tuesday")
+        break;
+    case 3:
+        console.log("It is Wednesday")
+        break;
+    case 4:
+        console.log("It is Thursday")
+        break;
+    case 5:
+        console.log("It is Friday")
+        break;
+    case 6:
+        console.log("It is Saturday")
+        break;
+    case 7:
+        console.log("It is Sunday")
+        break;
+    default:
+        console.log(`${day} is not a day `)    
+}
+*/
+
+
+
+/*
+let testScore = 32;
+let letterGrade;
+
+switch(true){
+    case testScore >= 90:
+       letterGrade="A";
+       break;
+    case testScore>=80:
+        letterGrade= "B";
+        break;
+    case testScore>=70:
+        letterGrade= "C";
+        break;
+    case testScore>=60:
+        letterGrade= "D";
+        break;
+    default:
+        letterGrade="F" 
+
+}
+console.log(letterGrade)
+*/
+
+
+
+
+CSS
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f5f6f7;
+}
+
+.header {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 32px;
+  background-color: #0a0a23;
+  color: #fff;
+  border-bottom: 4px solid #fdb347;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.gallery::after{
+  content: "";
+  width: 350px;
+}
